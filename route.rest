@@ -1,0 +1,105 @@
+
+
+//recevoir tous les utilisateurs 
+GET http://localhost:3000/missions/
+
+###
+//verifier les donées insérées et retourner un token lors du login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email":"marwen",
+    "password":"123"
+}
+###
+//envoyer les plantes associées de l'utilisateurs avec token inséré en Authorization Header 
+GET http://localhost:3000/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcndlbiIsInBhc3N3b3JkIjoiMTIzIiwiaWF0IjoxNjU2MTgxMDAzfQ.W0YTg0czB52-zJqxOrUTOjszI2LEg8KwlgrSUphGZBg
+
+### 
+POST http://localhost:3000/missions/
+Content-Type: application/json
+
+{
+  "insurance": {
+    "_id": "string",
+    "name": "string"
+  },
+  "agency": {
+    "_id": "string",
+    "name": "string"
+  },
+  "police": {
+    "name": "string",
+    "contrat": "string",
+    "address": "string",
+    "type": "Assurance",
+    "InsuredValue": 0,
+    "numTel": "string"
+  },
+  "mission": {
+    "description": "mission",
+    "missionDate": "string",
+    "type": "Expertise normale",
+    "state": "To Do"
+  },
+  "claim": {
+    "claimNumber": "string",
+    "claimDate": "string",
+    "accidentDate": "string",
+    "type": "Vol",
+    "kind": "N/A"
+  },
+  "report": {
+    "examinationLocation": "string",
+    "examinationDate": "string",
+    "vehiculeExpertise": "police",
+    "va": 0,
+    "vehiculeState": "string",
+    "indexKm": "string",
+    "immDays": 0,
+    "observation:": "string"
+  },
+  "tiers": {
+    "name": "string",
+    "contrat": "string",
+    "immatriculation": "string",
+    "doss": "string",
+    "address": "string",
+    "insuranceCompanyName": "string",
+    "agencyName": "string",
+    "type": "Aucun",
+    "category": "Remorque"
+  },
+  "car": {
+    "manufacturer": "string",
+    "model": "string",
+    "type": "string",
+    "serialNumber": "",
+    "power": "",
+    "color": "",
+    "vin": "",
+    "vv": "",
+    "vn": "",
+    "vEpave": "",
+    "kind": "",
+    "firstCirculationDate": "",
+    "energyType": "",
+    "licencePlateNumber": "",
+    "category": "Remorque",
+    "regCardPaths": ""
+  }
+}
+###
+POST http://localhost:3000/localmission/
+Content-Type: application/json
+
+{
+  "insurance": {
+    "_id": "6279e4311bbcb41fc32225d1"
+  },
+  "agency": {
+    "_id": "6279e4311bbcb41fc32225d1"
+  }
+}
